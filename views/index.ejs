@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fjord+One&display=swap" rel="stylesheet">
+    <title>Book Notes</title>
+</head>
+<body>
+    <div class="section" id="header">
+        <section>
+            <h1>Waleed Georgy - <span>Books I've Read</span></h1>
+            <p id="sorting-paragraph">Sort by <a href="books?sort=title">title</a>, <a href="books?sort=date">newest</a>, or <a href="books?sort=rating">best</a>.</p>
+        </section>
+    </div>
+    <% if(locals.books){ %>
+        <div class="section" id="main-body">
+            <% books.forEach(book => { %>
+                <a href="<%= book.url %>"><img src="<%= book.cover %>" alt="book cover" id="book-img" /></a>
+                <h3 id="book-title"><%= book.title %> — by <%= book.author %></h3>
+                <small id="book-isbn">ISBN: <%= book.isbn %></small>
+                <h4 id="book-rating">My rating: <%= book.rating %>/10</h4>
+                <h4 id="book-date">Read on: <%= book.date %></h4>
+                <p id="book-notes"><%= book.notes %></p><br><br>
+            <% }); %>
+        </div>
+    <% } else { %>
+        <div>
+            <h2>NO BOOKS YET</h2>
+        </div>
+    <% } %>
+</body>
+</html>

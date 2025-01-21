@@ -1,0 +1,47 @@
+body{
+    background-color: #082032;
+    color: white;
+    font-family: "Fjord One", serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#header{
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+a{
+    color: #FF4C29;
+    text-decoration: none;
+    
+}
+
+img{
+    float: left;
+    margin-right: 1rem;
+    box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+
+h1{
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+span{
+    color: #FF4C29;
+}
+
+#sorting-paragraph{
+    text-align: center;
+}
+
+h3{
+    margin-top: 0;
+}
