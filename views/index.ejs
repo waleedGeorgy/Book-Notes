@@ -12,19 +12,21 @@
 <body>
     <div class="section" id="header">
         <section>
-            <h1>Waleed Georgy - <span>Books I've Read</span></h1>
-            <p id="sorting-paragraph">Sort by <a href="books?sort=title">title</a>, <a href="books?sort=date">newest</a>, or <a href="books?sort=rating">best</a>.</p>
+            <h1><a href="https://waleedgeorgy.github.io/my-portfolio-website/" class="name-link">Waleed Georgy</a> — <span>Books I've Read</span></h1>
+            <p id="sorting-paragraph">Books are sorted alphabetically. Sort by <a href="books?sort=title">title</a>, <a href="books?sort=date">newest</a>, or <a href="books?sort=rating">best</a>.</p>
         </section>
     </div>
     <% if(locals.books){ %>
         <div class="section" id="main-body">
             <% books.forEach(book => { %>
-                <a href="<%= book.url %>"><img src="<%= book.cover %>" alt="book cover" id="book-img" /></a>
-                <h3 id="book-title"><%= book.title %> — by <%= book.author %></h3>
-                <small id="book-isbn">ISBN: <%= book.isbn %></small>
-                <h4 id="book-rating">My rating: <%= book.rating %>/10</h4>
-                <h4 id="book-date">Read on: <%= book.date %></h4>
-                <p id="book-notes"><%= book.notes %></p><br><br>
+                <div class="book">
+                    <a href="<%= book.url %>"><img src="<%= book.cover %>" alt="book cover" id="book-img" /></a>
+                    <h3 id="book-title"><a href="<%= book.url %>" class="name-link"><%= book.title %> — by <%= book.author %></a></h3>
+                    <h5 id="book-isbn">ISBN: <span><%= book.isbn %></span></h5>
+                    <h4 id="book-rating">My rating: <span><%= book.rating %>/10</span></h4>
+                    <h4 id="book-date">Read on: <span><%= book.date %></span></h4>
+                    <p id="book-notes"><%= book.notes %></p>
+                </div>
             <% }); %>
         </div>
     <% } else { %>

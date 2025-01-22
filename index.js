@@ -18,7 +18,7 @@ const port = 3000;
 
 // GET the main page
 app.get("/", async(req, res) => {
-    const result = await db.query("SELECT * FROM books");
+    const result = await db.query("SELECT * FROM books ORDER BY title ASC");
     res.render("index.ejs", {books: result.rows});
 });
 
